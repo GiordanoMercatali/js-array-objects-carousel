@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     height: 100vh;
     margin: 0 auto;
     display: flex;
@@ -14,15 +15,15 @@
 
 .items {
     position: relative;
-    width: 700px;
-    height: 300px;
+    width: 800px;
+    height: 400px;
     margin: 0 auto;
 }
 
 .item {
     height: 100%;
     display: none;
-    position: relative;
+    /* position: relative; */
 }
 
 .item img {
@@ -33,6 +34,16 @@
 
 .item.active {
     display: block;
+}
+
+.overlay-text{
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    padding-left: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 100%;
 }
 
 .thumbs {

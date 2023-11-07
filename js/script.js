@@ -3,7 +3,7 @@ const newImages = [];
 const images = [
     {
         image: 'img/01.webp',
-        title: 'Marvel\'s Spiderman Miles Morale',
+        title: 'Marvel\'s Spiderman Miles Morales',
         text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
     }, {
         image: 'img/02.webp',
@@ -37,7 +37,7 @@ for (let i = 0; i < images.length; i++) {
     itemsElem.innerHTML += `
     <div class="item">
         <img src="${images[i].image}" alt="">
-        <div class="text">
+        <div class="overlay-text">
             <h2> ${images[i].title} </h2>
             <p> ${images[i].text} </p>
         </div>
