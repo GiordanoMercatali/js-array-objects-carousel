@@ -34,8 +34,39 @@ for (let i = 0; i < images.length; i++) {
     
     console.log(images[i]);
 
-    itemsElem.innerHTML += `<div class="item"><img src="${images[i].image}" alt=""></div>`
+    itemsElem.innerHTML += `
+    <div class="item">
+        <img src="${images[i].image}" alt="">
+        <div class="text">
+            <h2> ${images[i].title} </h2>
+            <p> ${images[i].text} </p>
+        </div>
+    </div>
+    `
+
+    /*
+    itemsElem.innerHTML += `
+        <div class="item" style="background-image: url('${images[i].image}'); background-size: cover; background-attachment: fixed;">
+            
+            <div class="text">
+                <h2> ${images[i].title} </h2>
+                <p> ${images[i].text} </p>
+            </div>
+        </div>
+        `
+    */
 };
+/*
+itemsElem.innerHTML += `
+    <div class="item" style="background-image: url('${images[i].image}'); background-size: cover; background-attachment: fixed;">
+        
+        <div class="text">
+            <h2> ${images[i].title} </h2>
+            <p> ${images[i].text} </p>
+        </div>
+    </div>
+    `
+*/
 
 const itemElem = document.querySelectorAll(".item");
 console.log(itemElem);
