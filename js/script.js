@@ -1,5 +1,6 @@
 const itemsElem  = document.querySelector(".items");
-const newImages = [];
+const sideElem  = document.querySelector(".sidebar");
+
 const images = [
     {
         image: 'img/01.webp',
@@ -24,6 +25,20 @@ const images = [
     }
 ];
 
+const sideImages = [
+    {
+        image: 'img/01.webp',
+    }, {
+        image: 'img/02.webp',
+    }, {
+        image: 'img/03.webp',
+    }, {
+        image: 'img/04.webp',
+    }, {
+        image: 'img/05.webp',
+    }
+];
+
 let curImageIndex = 0;
 
 let curInterval;
@@ -43,30 +58,16 @@ for (let i = 0; i < images.length; i++) {
         </div>
     </div>
     `
-
-    /*
-    itemsElem.innerHTML += `
-        <div class="item" style="background-image: url('${images[i].image}'); background-size: cover; background-attachment: fixed;">
-            
-            <div class="text">
-                <h2> ${images[i].title} </h2>
-                <p> ${images[i].text} </p>
-            </div>
-        </div>
-        `
-    */
 };
-/*
-itemsElem.innerHTML += `
-    <div class="item" style="background-image: url('${images[i].image}'); background-size: cover; background-attachment: fixed;">
-        
-        <div class="text">
-            <h2> ${images[i].title} </h2>
-            <p> ${images[i].text} </p>
-        </div>
-    </div>
+
+for (let j = 0; j < sideImages.length; j++) {
+    
+    console.log(sideImages[j]);
+
+    sideElem.innerHTML += `
+    <img class="btn-image" src="${sideImages[j].image}">
     `
-*/
+};
 
 const itemElem = document.querySelectorAll(".item");
 console.log(itemElem);

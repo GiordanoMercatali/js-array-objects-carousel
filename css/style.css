@@ -46,6 +46,12 @@
     max-width: 100%;
 }
 
+.btn-image{
+    width: 12rem;
+    height: 5rem;
+    object-fit: cover;
+}
+
 .thumbs {
     height: 300px;
     background: #000;
