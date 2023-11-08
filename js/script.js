@@ -1,5 +1,5 @@
 const itemsElem  = document.querySelector(".items");
-const sideElem  = document.querySelector(".sidebar");
+const thumbnailElem  = document.querySelector(".sidebar");
 
 const images = [
     {
@@ -45,16 +45,18 @@ for (let i = 0; i < images.length; i++) {
     </div>
     `
 
-    sideElem.innerHTML += `
+    thumbnailElem.innerHTML += `
     <img class="btn-image" src="${images[i].image}">
     `
 };
 
 
 const itemElem = document.querySelectorAll(".item");
+const thumbElem = document.querySelectorAll(".btn-image");
 console.log(itemElem);
 
 itemElem[curImageIndex].classList.add("active");
+thumbElem[curImageIndex].classList.add("highlight");
 
 startTimer();
 
@@ -65,19 +67,23 @@ document.getElementById("prev-btn").addEventListener("click", pressPrevBtn);
 document.getElementById("item-hover").addEventListener("mouseover", pauseTimer);
 document.getElementById("item-hover").addEventListener("mouseout", startTimer);
 
-
 function pressNextBtn(){
 
         clearInterval(curInterval);
         curInterval = setInterval(pressNextBtn, intervalDuration);
         
         itemElem[curImageIndex].classList.remove("active");
+        thumbElem[curImageIndex].classList.remove("highlight");
+
         if (curImageIndex >= images.length - 1){
             curImageIndex = 0;
-            itemElem[curImageIndex].classList.add("active");}
+            itemElem[curImageIndex].classList.add("active");
+            thumbElem[curImageIndex].classList.add("highlight");
+        }
         else{
             curImageIndex++;
             itemElem[curImageIndex].classList.add("active");
+            thumbElem[curImageIndex].classList.add("highlight");
         }
           
 }
@@ -88,12 +94,17 @@ function pressPrevBtn(){
     curInterval = setInterval(pressPrevBtn, intervalDuration);
 
     itemElem[curImageIndex].classList.remove("active");
+    thumbElem[curImageIndex].classList.remove("highlight");
+
         if (curImageIndex <= 0){
             curImageIndex = images.length - 1;
-            itemElem[curImageIndex].classList.add("active");}
+            itemElem[curImageIndex].classList.add("active");
+            thumbElem[curImageIndex].classList.add("highlight");
+        }
         else{
             curImageIndex--;
             itemElem[curImageIndex].classList.add("active");
+            thumbElem[curImageIndex].classList.add("highlight");
         }
         
 }
@@ -110,8 +121,4 @@ function pauseTimer(){
     clearInterval(curInterval);
     curInterval = undefined;
     console.log("Pause");
-}
-
-function showSlide(){
-
 }
