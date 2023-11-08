@@ -25,20 +25,6 @@ const images = [
     }
 ];
 
-const sideImages = [
-    {
-        image: 'img/01.webp',
-    }, {
-        image: 'img/02.webp',
-    }, {
-        image: 'img/03.webp',
-    }, {
-        image: 'img/04.webp',
-    }, {
-        image: 'img/05.webp',
-    }
-];
-
 let curImageIndex = 0;
 
 let curInterval;
@@ -58,16 +44,12 @@ for (let i = 0; i < images.length; i++) {
         </div>
     </div>
     `
-};
-
-for (let j = 0; j < sideImages.length; j++) {
-    
-    console.log(sideImages[j]);
 
     sideElem.innerHTML += `
-    <img class="btn-image" src="${sideImages[j].image}">
+    <img class="btn-image" src="${images[i].image}">
     `
 };
+
 
 const itemElem = document.querySelectorAll(".item");
 console.log(itemElem);
@@ -103,7 +85,7 @@ function pressNextBtn(){
 function pressPrevBtn(){
 
     clearInterval(curInterval);
-    curInterval = setInterval(pressNextBtn, intervalDuration);
+    curInterval = setInterval(pressPrevBtn, intervalDuration);
 
     itemElem[curImageIndex].classList.remove("active");
         if (curImageIndex <= 0){
@@ -128,4 +110,8 @@ function pauseTimer(){
     clearInterval(curInterval);
     curInterval = undefined;
     console.log("Pause");
+}
+
+function showSlide(){
+
 }
